@@ -1,0 +1,48 @@
+<ion-content padding text-center>
+    <ion-grid>
+        <ion-row>
+            <ion-col class="top-1rem">
+                <img src="./assets/img/app-logo.png">
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col padding-top>
+                <h3>Manos Ya!</h3>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col class="top-05rem">
+                <form [formGroup]="frmLogin" (ngSubmit)="ingresar()" novalidate>
+                    <ion-item>
+                        <ion-label stacked>EMAIL</ion-label>
+                        <ion-input formControlName="email" type="text" [ngModel]="email"></ion-input>
+                    </ion-item>
+                    <ion-item *ngIf="tieneErrores && frmLogin.get('email').errors" no-lines>
+                        <span ion-text color="danger" *ngIf="frmLogin.get('email').hasError('required')">Es requerido</span>
+                        <span ion-text color="danger" *ngIf="frmLogin.get('email').hasError('email') &&
+                                                                !frmLogin.get('email').hasError('required')">Email no es válido</span>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label stacked>CLAVE</ion-label>
+                        <ion-input formControlName="clave" type="password" [ngModel]="clave"></ion-input>
+                    </ion-item>
+
+                    <ion-item *ngIf="tieneErrores && frmLogin.get('clave').errors" no-lines>
+                        <span ion-text color="danger" *ngIf="frmLogin.get('clave').hasError('required')">Es requerido</span>
+                    </ion-item>
+
+                    <div padding text-center>
+                        <button ion-button type="submit" block large icon-start>
+                            <ion-icon name="lock" item-end></ion-icon>
+                            Ingresar
+                        </button>
+                        <ion-note>
+                            <p>{{ versionNumero }}</p>
+                        </ion-note>
+                    </div>
+                </form>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
