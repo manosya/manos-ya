@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>Página 1</ion-title>
+        <ion-buttons left>
+            <button ion-button menuToggle>
+                <ion-icon name="menu"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    Contenido Página 1
+    <br>
+    <br>
+    <br>
+
+    <button ion-button block large color="secondary" [navPush]="pagina3">
+        Ir página 3
+    </button>
+</ion-content>

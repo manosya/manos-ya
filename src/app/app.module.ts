@@ -24,14 +24,23 @@ import { UtilidadesProvider } from '../providers/utilidades/utilidades';
 import { MyApp } from './app.component';
 import {
     HomePage,
-    LoginPage
+    LoginPage,
+    PaginaModalPage,
+    Pagina1Page,
+    Pagina2Page,
+    Pagina3Page
 } from '../pages/pages.index';
+import { UsuarioProvider } from '../providers/usuario/usuario';
 
 @NgModule({
     declarations: [
         MyApp,
         HomePage,
-        LoginPage
+        LoginPage,
+        PaginaModalPage,
+        Pagina1Page,
+        Pagina2Page,
+        Pagina3Page
     ],
     imports: [
         BrowserModule,
@@ -50,7 +59,11 @@ import {
     entryComponents: [
         MyApp,
         HomePage,
-        LoginPage
+        LoginPage,
+        PaginaModalPage,
+        Pagina1Page,
+        Pagina2Page,
+        Pagina3Page
     ],
     providers: [
         { provide: ErrorHandler, useClass: IonicErrorHandler },
@@ -58,7 +71,8 @@ import {
         SplashScreen,
         Network,
         AppVersion,
-        UtilidadesProvider
+        UtilidadesProvider,
+    UsuarioProvider
     ]
 })
 export class AppModule {}

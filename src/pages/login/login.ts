@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { HomePage } from '../pages.index';
 import { MiValidador } from './../../providers/mi-validador/mi-validador';
 import { UtilidadesProvider } from '../../providers/utilidades/utilidades';
+import { UsuarioProvider } from '../../providers/usuario/usuario';
 
 @Component({
     selector: 'page-login',
@@ -13,15 +14,16 @@ export class LoginPage {
     frmLogin: FormGroup;
     tieneErrores: boolean = false;
     versionNumero: string;
-    email: string = '';
-    clave: string = '';
+    email: string = 'test@test.com';
+    clave: string = '1234';
 
     constructor(
         public navCtrl: NavController,
         public navParams: NavParams,
         public menuCtrl: MenuController,
         public formBuilder: FormBuilder,
-        public _utilidadesPrv: UtilidadesProvider
+        public _utilidadesPrv: UtilidadesProvider,
+        public _usuarioPrv: UsuarioProvider
     ) {
         // inicia los campos que se van a manejar desde el formulario html
         this.frmLogin = this.formBuilder.group({
@@ -70,6 +72,12 @@ export class LoginPage {
 
         // TODO *** CREAR METODO LOGIN PARA SUSCRIBIRSE
         // accede al Dashboard
+
+        // si respuesta es exitosa entonces continua
+        // this._usuarioPrv.usuario = resp.Datos;
+        this._usuarioPrv.inicializarUsuario(); // todo *** eliminar este metodo depsues que este implementado el login
+        this._usuarioPrv.notificarCambio.emit(true);
+
         this.navCtrl.setRoot(HomePage);        
     }
 }

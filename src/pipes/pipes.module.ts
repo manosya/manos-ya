@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { FechaCompletaPipe } from './fecha-completa/fecha-completa';
+import { ImagenPipe } from './imagen/imagen';
 
 @NgModule({
     declarations: [
-        FechaCompletaPipe
+        FechaCompletaPipe,
+    ImagenPipe
     ],
     imports: [],
     exports: [
-        FechaCompletaPipe
+        FechaCompletaPipe,
+    ImagenPipe
     ]
 })
 export class PipesModule {}

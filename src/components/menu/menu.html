@@ -2,21 +2,17 @@
     <ion-header>
         <ion-toolbar color="primary">
             <ion-item color="primary" no-lines>
-                <!--
-                <ion-avatar item-start (click)="cambiarImagen()">
-                    <img [src]="persona?.NombreImagen | imagen">
+                <ion-avatar item-start (click)="abrirModal()">
+                    <img [src]="usuario?.nombreImagen | imagen">
                 </ion-avatar>
-                <h2>{{ persona?.Nombres + ' ' + persona?.Apellidos}}</h2>
+                <h2>{{ usuario?.nombres + ' ' + usuario?.apellidos}}</h2>
                 <small>{{ fechaActual | fechaCompleta }}</small>
-                -->
-                <h2>{{ text }}</h2>
             </ion-item>
         </ion-toolbar>
     </ion-header>
 
     <ion-content>
         <ion-item-group>
-            <!--
             <button *ngFor="let pagina of paginas" (click)="abrirPagina(pagina)" menuClose ion-item detail-none>
                 <ion-icon [name]="pagina.icono"></ion-icon>
                 {{ pagina.titulo }}
@@ -28,11 +24,6 @@
             <ion-note ion-item text-center>
                 <small>{{ versionNumero }}</small>
             </ion-note>
-            -->
-
-            <ion-item>
-                Listado de páginas
-            </ion-item>
         </ion-item-group>
     </ion-content>
 </ion-menu>
