@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-import { Pagina3Page } from '../pages.index';
+import { NavController, NavParams, Platform } from 'ionic-angular';
+import { Pagina3Page, HomePage } from '../pages.index';
+import { CONSTANTES } from '../../providers/constantes/constantes';
 
 @Component({
     selector: 'page-pagina1',
@@ -8,10 +9,27 @@ import { Pagina3Page } from '../pages.index';
 })
 export class Pagina1Page {
     pagina3: any = Pagina3Page;
+    unregisterBackButtonAction: any;
 
-    constructor(public navCtrl: NavController, public navParams: NavParams) {}
+    constructor(
+        public navCtrl: NavController,
+        public navParams: NavParams,
+        public platform: Platform
+    ) {}
 
-    ionViewDidLoad() {
-        console.log('ionViewDidLoad Pagina1Page');
+    ionViewWillEnter() {
+        this.initializeBackButtonCustomHandler();
     }
+
+    ionViewWillLeave() {
+        // Anula el registro de la acción del botón Atrás personalizado para esta página
+        this.unregisterBackButtonAction && this.unregisterBackButtonAction();
+    }
+
+    initializeBackButtonCustomHandler() {
+        this.unregisterBackButtonAction = this.platform.registerBackButtonAction(event => {
+            this.navCtrl.setRoot(HomePage);
+        }, CONSTANTES.BACKBUTTON_PRIORIDAD_MEDIA);
+    } 
+
 }

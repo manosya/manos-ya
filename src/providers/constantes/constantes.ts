@@ -2,8 +2,8 @@ export const CONSTANTES = {
     // URL_BACKEND: 'http://localhost:5031/api',
     URL_BACKEND: 'https://epayrest.azurewebsites.net/api',
 
-    PUSH_ONESIGNAL_APP_ID: 'ea7bee70-96d2-4382-bf7e-a9a6809adf6a',
-    PUSH_FIREBASE_PROYECT_NUMBER: '997974603014',
+    PUSH_ONESIGNAL_APP_ID: '6f888457-7b3b-4555-8c2f-fdaab0e7a309',
+    PUSH_FIREBASE_PROYECT_NUMBER: '1058918293674',
 
     COLOR_STATUS_BAR: '#af4f16',
 

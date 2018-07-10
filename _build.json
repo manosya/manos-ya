@@ -1,0 +1,18 @@
+{
+    "android": {
+        "debug": {
+            "keystore": "C:\\Evolsystem\\FirmaAndroid\\evolsystem.keystore",
+            "storePassword": "$Evolsystem#",
+            "alias": "evolsystem",
+            "password": "$Evolsystem#",
+            "keystoreType": ""
+        },
+        "release": {
+            "keystore": "C:\\Evolsystem\\FirmaAndroid\\evolsystem.keystore",
+            "storePassword": "$Evolsystem#",
+            "alias": "evolsystem",
+            "password": "$Evolsystem#",
+            "keystoreType": ""
+        }
+    }
+}

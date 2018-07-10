@@ -12,6 +12,8 @@ import 'rxjs/add/observable/throw';
 // Plugins
 import { Network } from '@ionic-native/network';
 import { AppVersion } from '@ionic-native/app-version';
+import { HeaderColor } from '@ionic-native/header-color';
+import { OneSignal } from '@ionic-native/onesignal';
 
 // Modulos
 import { PipesModule } from './../pipes/pipes.module';
@@ -31,6 +33,7 @@ import {
     Pagina3Page
 } from '../pages/pages.index';
 import { UsuarioProvider } from '../providers/usuario/usuario';
+import { PushNotificationProvider } from '../providers/push-notification/push-notification';
 
 @NgModule({
     declarations: [
@@ -71,8 +74,11 @@ import { UsuarioProvider } from '../providers/usuario/usuario';
         SplashScreen,
         Network,
         AppVersion,
+        HeaderColor,
+        OneSignal,
         UtilidadesProvider,
-    UsuarioProvider
+        UsuarioProvider,
+        PushNotificationProvider
     ]
 })
 export class AppModule {}
