@@ -5,7 +5,7 @@ export const CONSTANTES = {
     PUSH_ONESIGNAL_APP_ID: '6f888457-7b3b-4555-8c2f-fdaab0e7a309',
     PUSH_FIREBASE_PROYECT_NUMBER: '1058918293674',
 
-    COLOR_STATUS_BAR: '#af4f16',
+    COLOR_STATUS_BAR: '#005268',
 
     DIAS_SEMANA: new Array(
         'Domingo',
