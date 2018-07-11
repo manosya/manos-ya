@@ -7,6 +7,22 @@ export const CONSTANTES = {
 
     COLOR_STATUS_BAR: '#005268',
 
+    FIREBASE_CONFIG: {
+        apiKey: 'AIzaSyAOzMPXGoOrbn8K3y0Bq-Vxlkg1H_WosI4',
+        authDomain: 'manosya-55a25.firebaseapp.com',
+        databaseURL: 'https://manosya-55a25.firebaseio.com',
+        projectId: 'manosya-55a25',
+        storageBucket: 'manosya-55a25.appspot.com',
+        messagingSenderId: '1058918293674'
+
+        // apiKey: "AIzaSyA_F2qn08zwv9QqUeSwB8y46EkcbVBO2gE",
+        // authDomain: "firechat-38ff0.firebaseapp.com",
+        // databaseURL: "https://firechat-38ff0.firebaseio.com",
+        // projectId: "firechat-38ff0",
+        // storageBucket: "firechat-38ff0.appspot.com",
+        // messagingSenderId: "502076197194"        
+    },
+    
     DIAS_SEMANA: new Array(
         'Domingo',
         'Lunes',

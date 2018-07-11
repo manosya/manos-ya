@@ -15,7 +15,7 @@ export class LoginPage {
     tieneErrores: boolean = false;
     versionNumero: string;
     email: string = 'test@test.com';
-    clave: string = '1234';
+    clave: string = '123456';
 
     constructor(
         public navCtrl: NavController,
@@ -72,12 +72,17 @@ export class LoginPage {
 
         // TODO *** CREAR METODO LOGIN PARA SUSCRIBIRSE
         // accede al Dashboard
-
-        // si respuesta es exitosa entonces continua
-        // this._usuarioPrv.usuario = resp.Datos;
-        this._usuarioPrv.inicializarUsuario(); // todo *** eliminar este metodo depsues que este implementado el login
-        this._usuarioPrv.notificarCambio.emit(true);
-
-        this.navCtrl.setRoot(HomePage);        
+        this._usuarioPrv.login(email, clave)
+            .then(resp => {
+                console.log(resp);
+                // si respuesta es exitosa entonces continua
+                // this._usuarioPrv.usuario = resp.Datos;
+                this._usuarioPrv.inicializarUsuario(); // todo *** eliminar este metodo depsues que este implementado el login
+                this._usuarioPrv.notificarCambio.emit(true);
+                this.navCtrl.setRoot(HomePage);        
+            })
+            .catch(err => {
+                alert(err.message);
+            });
     }
 }

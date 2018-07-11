@@ -14,6 +14,9 @@ import { Network } from '@ionic-native/network';
 import { AppVersion } from '@ionic-native/app-version';
 import { HeaderColor } from '@ionic-native/header-color';
 import { OneSignal } from '@ionic-native/onesignal';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 // Modulos
 import { PipesModule } from './../pipes/pipes.module';
@@ -21,6 +24,7 @@ import { ComponentsModule } from '../components/components.module';
 
 // Servicios
 import { UtilidadesProvider } from '../providers/utilidades/utilidades';
+import { CONSTANTES } from '../providers/constantes/constantes';
 
 // Componentes
 import { MyApp } from './app.component';
@@ -56,7 +60,10 @@ import { PushNotificationProvider } from '../providers/push-notification/push-no
             monthShortNames: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
             dayNames: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
             dayShortNames: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab']
-        })
+        }),
+        AngularFireModule.initializeApp(CONSTANTES.FIREBASE_CONFIG),
+        AngularFireDatabaseModule,
+        AngularFireAuthModule        
     ],
     bootstrap: [IonicApp],
     entryComponents: [
@@ -69,16 +76,17 @@ import { PushNotificationProvider } from '../providers/push-notification/push-no
         Pagina3Page
     ],
     providers: [
-        { provide: ErrorHandler, useClass: IonicErrorHandler },
         StatusBar,
         SplashScreen,
         Network,
         AppVersion,
         HeaderColor,
         OneSignal,
+        AngularFireDatabase,
         UtilidadesProvider,
         UsuarioProvider,
-        PushNotificationProvider
+        PushNotificationProvider,
+        { provide: ErrorHandler, useClass: IonicErrorHandler }
     ]
 })
 export class AppModule {}
