@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, EventEmitter } from '@angular/core';
 import { IUsuario } from './../../interfaces/interfaces';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { auth } from 'firebase';
+import { LoadingController } from 'ionic-angular';
+import { UtilidadesProvider } from './../utilidades/utilidades';
 
 @Injectable()
 export class UsuarioProvider {
@@ -11,11 +12,14 @@ export class UsuarioProvider {
 
     constructor(
         public http: HttpClient,
-        public afAuth: AngularFireAuth
+        public afAuth: AngularFireAuth,
+        public loadingCtrl: LoadingController,
+        public _utilidadesPrv: UtilidadesProvider
     ) {}
 
     limpiarObjeto() {
         this.usuario = null;
+        this.logout();
     }
 
     inicializarUsuario() {
@@ -42,11 +46,18 @@ export class UsuarioProvider {
     }
 
     login(email: string, clave: string) {
+        let loader = this.loadingCtrl.create({
+            content: "Validando usuario"
+        });
+        loader.present();
+
         return new Promise((resolve, reject) => {
             this.afAuth.auth.signInWithEmailAndPassword(email, clave)
                 .then(resp => {
+                    loader.dismiss();
                     resolve(resp);
                 }, err => {
+                    loader.dismiss();
                     reject(err);
                 })
         });
@@ -58,6 +69,21 @@ export class UsuarioProvider {
 
     logout() {
         return this.afAuth.auth.signOut();
+    }
+
+    estaLogueado(mostrarAlerta: boolean = true) {
+        const estaLogueado: boolean = (this.usuario) ? true : false;
+
+        if (mostrarAlerta) {
+            if (!estaLogueado) {
+                this._utilidadesPrv.mostrarAlerta({
+                    titulo: 'Permiso denegado',
+                    descripcion: 'No tiene permisos para visualizar la pantalla siguiente'
+                });
+            }
+        }
+
+        return estaLogueado;
     }
 
 }

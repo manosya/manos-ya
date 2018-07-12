@@ -21,7 +21,7 @@ $app-direction: ltr;
 // the Sass variables found in Ionic's source scss files.
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
-
+$text-input-highlight-color-valid: none;
 
 
 
@@ -34,11 +34,17 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #008fb4,
-  secondary:  #ed662d,
-  danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+	primary: #008fb4,
+	secondary: #ed662d,
+	danger: #f53d3d,
+	light: #f4f4f4,
+	dark: #222,
+	info: #2a4a9b,
+	success: #3bb04a,
+	warning: #fff3CD,
+	gris: #eee,
+	muted: #9e9e9e,
+	gris-dark: #616161  
 );
 
 

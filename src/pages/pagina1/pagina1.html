@@ -10,12 +10,14 @@
 </ion-header>
 
 <ion-content padding>
-    Contenido Página 1
-    <br>
-    <br>
-    <br>
+    <div class="app-sin-registros" text-center>
+        <div color="muted" ion-text padding-bottom>
+            <ion-icon name="md-bicycle" class="app-icon-10x"></ion-icon>
+            <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit
+        </div>
 
-    <button ion-button block large color="secondary" [navPush]="pagina3">
-        Ir página 3
-    </button>
+        <button ion-button color="secondary" [navPush]="pagina3">
+            Ir página 3
+        </button>
+    </div>
 </ion-content>

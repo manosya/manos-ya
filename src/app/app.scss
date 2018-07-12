@@ -1,6 +1,4 @@
 // http://ionicframework.com/docs/theming/
-
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -14,3 +12,90 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+.app-img-circle {
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    background-size: cover;
+    background-color: color($colors, light);
+}
+
+.app-img-sm {
+    width: 5rem;
+    height: 5rem;
+}
+
+.app-img-md {
+    width: 8rem;
+    height: 8rem;
+}
+
+.app-img-lg {
+    width: 25rem;
+    height: 25rem;
+}
+
+.app-text-lg {
+    font-size: 2.5rem !important;
+}
+
+.app-text-md {
+    font-size: 1.8rem !important;
+}
+
+.app-no-scroll {
+    .scroll-content {
+        overflow-y: unset;
+        overflow-x: unset;
+    }
+}
+
+.app-margin-top-4rem {
+    margin-top: 4rem;
+}
+
+.app-sin-registros {
+    position: relative;
+    top: 25%;
+    font-size: 1.5rem;
+}
+
+.app-icon-5x {
+    font-size: 10rem;
+}
+
+.app-icon-10x {
+    font-size: 16rem;
+}
+
+.app-card-titulo {
+    font-size: 1.3rem !important;
+    font-weight: bold !important;
+}
+
+.app-padding-0 {
+    padding: 0px;
+}
+
+.app-card-body ion-label {
+    margin: 0px;
+}
+
+.app-label-margin {
+    margin: 2rem 0 !important;
+}
+
+.app-borde-activo {
+    background-color: transparent !important;
+    transition: border-width 250ms, background-color 1s !important;
+    &.active {
+        border-left-width: 10px;
+        border-left-style: solid;
+        border-left-color: color($colors, primary);
+    }
+    &.active-secondary {
+        border-left-width: 10px;
+        border-left-style: solid;
+        border-left-color: color($colors, secondary);
+    }
+}

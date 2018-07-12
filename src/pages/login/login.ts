@@ -14,8 +14,8 @@ export class LoginPage {
     frmLogin: FormGroup;
     tieneErrores: boolean = false;
     versionNumero: string;
-    email: string = 'test@test.com';
-    clave: string = '123456';
+    email: string = '';
+    clave: string = '';
 
     constructor(
         public navCtrl: NavController,
@@ -30,6 +30,12 @@ export class LoginPage {
             email: ['', [Validators.required, MiValidador.email]],
             clave: ['', Validators.required]
         });
+    }
+
+    // TODO *** eliminar
+    llenarFormulario() {
+        this.email = 'test@test.com';
+        this.clave = '123456';
     }
 
     ionViewDidLoad() {
@@ -50,6 +56,9 @@ export class LoginPage {
     }
 
     ingresar() {
+        const ERROR_USERNAME: string = 'auth/user-not-found';
+        const ERROR_PASSWORD: string = 'auth/wrong-password';
+
         // verifica los datos del formulario
         this.tieneErrores = this.frmLogin.invalid;
 
@@ -74,7 +83,6 @@ export class LoginPage {
         // accede al Dashboard
         this._usuarioPrv.login(email, clave)
             .then(resp => {
-                console.log(resp);
                 // si respuesta es exitosa entonces continua
                 // this._usuarioPrv.usuario = resp.Datos;
                 this._usuarioPrv.inicializarUsuario(); // todo *** eliminar este metodo depsues que este implementado el login
@@ -82,7 +90,18 @@ export class LoginPage {
                 this.navCtrl.setRoot(HomePage);        
             })
             .catch(err => {
-                alert(err.message);
+                if (err.code === ERROR_PASSWORD || err.code === ERROR_USERNAME) {
+                    this._utilidadesPrv.mostrarAlerta({
+                        titulo: 'Acceso denegado',
+                        descripcion: 'Email o clave no corresponden'
+                    });
+                } else {
+                    this._utilidadesPrv.mostrarAlerta({
+                        titulo: 'Error de servidor',
+                        descripcion: `Se produjo un error desconocido, y no podemos procesar su solicitud.<br>[code: ${ err.code }]`
+                    });
+                }
             });
+
     }
 }

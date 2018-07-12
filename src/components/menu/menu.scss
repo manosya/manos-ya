@@ -1,3 +1,13 @@
 menu {
-
+    ion-list ion-label {
+        font-size: 1.6rem !important;
+    }
+    .menu-hr {
+        border-bottom: .1rem solid rgba(66, 66, 66, 0.12);
+        margin: 10px 0;
+        width: 100%;
+    }
+    .menu-nombre-usuario ion-label {
+        margin: 0 0 1rem 0;
+    }
 }

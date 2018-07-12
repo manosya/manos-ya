@@ -26,16 +26,16 @@ export class MenuComponent {
     ) {
         // listado de paginas que se muestran en el sidemenu
         this.paginas = [
-            { titulo: 'Mi Home', icono: 'card', componente: HomePage },
+            { titulo: 'Mi Home', icono: 'ios-home', componente: HomePage },
             { titulo: 'Página 1', icono: 'md-time', componente: Pagina1Page },
-            { titulo: 'Página 2', icono: 'md-time', componente: Pagina2Page },
-            { titulo: 'Página Modal', icono: 'key', componente: PaginaModalPage }
+            { titulo: 'Página 2', icono: 'md-help-circle', componente: Pagina2Page },
+            { titulo: 'divider', icono: '', componente: null },
+            { titulo: 'Página Modal', icono: 'md-key', componente: PaginaModalPage }
         ];
 
         // se suscribe al evento cuando cambia la propiedad 'usuario' del servicio
         this._usuarioPrv.notificarCambio
             .subscribe(resp => {
-                console.log('usuario notificado', resp);
                 this.usuario = this._usuarioPrv.usuario;
             });
 

@@ -9,10 +9,47 @@
 
 <ion-content>
     <ion-card *ngFor="let item of items">
+        <ion-item color="primary">
+            <ion-avatar item-start>
+                <img src="assets/img/profile.png">
+            </ion-avatar>
+            <h2 ion-text color="light">{{ item.alias }}</h2>
+            <p>{{ item.email }}</p>
+        </ion-item>
+
+        <img src="assets/img/paisaje.jpg">
+
         <ion-card-content>
-            <ion-card-title color="primary">
-                <h2>{{ item.alias }}</h2>
-                <p>{{ item.email}}</p>
+            <p>{{ item.causa }}</p>
+        </ion-card-content>
+
+        <ion-row>
+            <ion-col>
+                <button ion-button icon-start clear small>
+                    <ion-icon name="thumbs-up"></ion-icon>
+                    <div>12 Likes</div>
+                </button>
+            </ion-col>
+            <ion-col>
+                <button ion-button icon-start clear small>
+                    <ion-icon name="text"></ion-icon>
+                    <div>4 Comments</div>
+                </button>
+            </ion-col>
+            <ion-col center text-center>
+                <ion-note>
+                    11 ago
+                </ion-note>
+            </ion-col>
+        </ion-row>
+    </ion-card>
+
+
+    <ion-card *ngFor="let item of items">
+        <ion-card-content>
+            <ion-card-title>
+                <h2 ion-text color="primary"><b>{{ item.alias }}</b></h2>
+                <h2 ion-text color="primary"><b>{{ item.alias }}</b></h2>
             </ion-card-title>
             <p>{{ item.causa }}</p>
         </ion-card-content>

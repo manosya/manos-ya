@@ -1,21 +1,15 @@
 page-login {
     ion-content {
-        background: #006681;
-        background: -moz-linear-gradient(top, #006681 72%, #008fb4 100%);
-        background: -webkit-linear-gradient(top, #006681 72%, #008fb4 100%);
-        background: linear-gradient(to bottom, #006681 72%, #008fb4 100%);
+        background: #003e4e;
+        background: -moz-linear-gradient(top, #003e4e 60%, #008fb4 100%);
+        background: -webkit-linear-gradient(top, #003e4e 60%, #008fb4 100%);
+        background: linear-gradient(to bottom, #003e4e 60%, #008fb4 100%);
     }
     img {
         width: 150px;
     }
     h3 {
         color: white;
-    }
-    .top-1rem {
-        margin-top: 1rem;
-    }
-    .top-05rem {
-        margin-top: .5rem;
     }
     ion-item {
         background-color: transparent !important;

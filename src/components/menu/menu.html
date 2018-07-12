@@ -5,26 +5,36 @@
                 <ion-avatar item-start (click)="abrirModal()">
                     <img [src]="usuario?.nombreImagen | imagen">
                 </ion-avatar>
+            </ion-item>
+            <ion-item color="primary" no-lines class="menu-nombre-usuario">
                 <h2>{{ usuario?.nombres + ' ' + usuario?.apellidos}}</h2>
                 <small>{{ fechaActual | fechaCompleta }}</small>
             </ion-item>
         </ion-toolbar>
     </ion-header>
 
-    <ion-content>
-        <ion-item-group>
-            <button *ngFor="let pagina of paginas" (click)="abrirPagina(pagina)" menuClose ion-item detail-none>
-                <ion-icon [name]="pagina.icono"></ion-icon>
-                {{ pagina.titulo }}
-            </button>
-            <button (click)="cerrarSesion()" ion-item detail-none>
-                <ion-icon name="log-out"></ion-icon>
+    <ion-content padding-top>
+        <ion-list no-lines>
+            <div *ngFor="let pagina of paginas">
+                <button *ngIf="pagina.titulo != 'divider'" (click)="abrirPagina(pagina)" ion-item menuClose detail-none text-wrap>
+                    <ion-icon [name]="pagina.icono" margin-right color="gris-dark"></ion-icon>
+                    {{ pagina.titulo }}
+                </button>
+
+                <div *ngIf="pagina.titulo === 'divider'" class="menu-hr"></div>
+            </div>
+
+            <button (click)="cerrarSesion()" ion-item detail-none text-wrap>
+                <ion-icon name="md-log-out" margin-right color="gris-dark"></ion-icon>
                 Cerrar Sesi&oacute;n
             </button>
+
+            <div class="menu-hr"></div>
+
             <ion-note ion-item text-center>
                 <small>{{ versionNumero }}</small>
             </ion-note>
-        </ion-item-group>
+        </ion-list>
     </ion-content>
 </ion-menu>
 
