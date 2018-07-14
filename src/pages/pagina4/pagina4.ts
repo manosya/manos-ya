@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { LoadingController } from 'ionic-angular';
 import { UsuarioProvider } from '../../providers/usuario/usuario';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+    selector: 'page-pagina4',
+    templateUrl: 'pagina4.html'
 })
-export class HomePage {
+export class Pagina4Page {
     items: any[];
     subscripcion: Subscription;
 
@@ -51,5 +51,4 @@ export class HomePage {
         console.log('unsubscribe');
         this.subscripcion.unsubscribe();
     }
-
 }

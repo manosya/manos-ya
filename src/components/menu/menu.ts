@@ -3,7 +3,7 @@ import { Nav, ModalController, AlertController } from 'ionic-angular';
 import { IUsuario, IPagina } from '../../interfaces/interfaces';
 import { UtilidadesProvider } from '../../providers/utilidades/utilidades';
 import { UsuarioProvider } from '../../providers/usuario/usuario';
-import { LoginPage, HomePage, Pagina1Page, Pagina2Page, PaginaModalPage } from '../../pages/pages.index';
+import { LoginPage, HomePage, Pagina1Page, Pagina2Page, PaginaModalPage, Pagina4Page } from '../../pages/pages.index';
 
 @Component({
     selector: 'menu',
@@ -30,6 +30,7 @@ export class MenuComponent {
             { titulo: 'Página 1', icono: 'md-time', componente: Pagina1Page },
             { titulo: 'Página 2', icono: 'md-help-circle', componente: Pagina2Page },
             { titulo: 'divider', icono: '', componente: null },
+            { titulo: 'Página 3 - VirtualScroll', icono: 'md-help-circle', componente: Pagina4Page },
             { titulo: 'Página Modal', icono: 'md-key', componente: PaginaModalPage }
         ];
 
