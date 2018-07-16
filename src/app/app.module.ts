@@ -34,8 +34,7 @@ import {
     PaginaModalPage,
     Pagina1Page,
     Pagina2Page,
-    Pagina3Page,
-    Pagina4Page
+    Pagina3Page
 } from '../pages/pages.index';
 import { UsuarioProvider } from '../providers/usuario/usuario';
 import { PushNotificationProvider } from '../providers/push-notification/push-notification';
@@ -48,8 +47,7 @@ import { PushNotificationProvider } from '../providers/push-notification/push-no
         PaginaModalPage,
         Pagina1Page,
         Pagina2Page,
-        Pagina3Page,
-        Pagina4Page
+        Pagina3Page
     ],
     imports: [
         BrowserModule,
@@ -75,8 +73,7 @@ import { PushNotificationProvider } from '../providers/push-notification/push-no
         PaginaModalPage,
         Pagina1Page,
         Pagina2Page,
-        Pagina3Page,
-        Pagina4Page
+        Pagina3Page
     ],
     providers: [
         StatusBar,

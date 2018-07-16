@@ -32,11 +32,6 @@ export class HomePage {
                 loader.dismiss();
                 this.items = resp;
 
-                for (let i = 0; i < 300; i++) {
-                    this.items.push(resp[0]);
-                }
-
-
                 console.log('datos obtenidos');
             }, err => {
                 console.log(err);
